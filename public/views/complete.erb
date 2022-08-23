@@ -40,8 +40,16 @@
         <h1 class="mt-4 pb-4 border-bottom">送信完了</h1>
         <p>ありがとうございました。送信を受け付けました。</p>
         <p>3営業日以内をめどにご返信いたしますので、しばらくお待ちください。</p>
-        <% name = params['target_name'] %>
-    <p>こんにちは、<%= name %>さん</p>
+         <% company = params['company'] %>
+        <% name = params['name'] %>
+        <% mail = params['mail'] %>
+        <% tel = params['tel'] %>
+        <% content = params['content'].gsub(/\r\n|\r|\n/, "<br>") %>
+    <p>会社名<%= company %></p>
+    <p>氏名<%= name %></p>
+      <p>メール<%= mail %></p>
+        <p>電話番号<%= tel %></p>
+          <p>内容<%= content %></p>
    
         <div class="text-center mb-4">
             <!-- 「戻る」ボタンを緑色にする設定を追加 -->
